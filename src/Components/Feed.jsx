@@ -8,7 +8,11 @@ import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Posts from './Posts';
 function Feed() {
-    const [posts,setposts] = useState([]);
+    const [posts,setPosts]=useState([]);
+const sendPost=(e) => {
+    e.preventDefault();
+}
+    
   return (
     <div className="feed">
         <div className="feed_inputContainer">
@@ -16,7 +20,7 @@ function Feed() {
                 <CreateIcon/>
                 <form>
                     <input type="text" />
-                    <button type='submit'>Post</button>
+                    <button onClick={sendPost} type='submit'>Post</button>
                 </form>
             </div>
             <div className="feed_inputOptions">
