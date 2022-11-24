@@ -1,12 +1,13 @@
-
+import React from 'react';
 import './App.css';
+import Feed from './Components/Feed';
+import Header from './Components/Header';
 
 function App() {
   return (
-    <div className="app">
-      <h1>
-      Let's build LayOFFERS
-      </h1>
+    <div className="App">
+      <Header/>
+      <Feed/>
     </div>
   );
 }
