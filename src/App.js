@@ -3,6 +3,7 @@ import './App.css';
 import Feed from './Components/Feed';
 import Header from './Components/Header';
 import Sidebar from './Components/Sidebar';
+import Login from './Components/Login';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
            <Sidebar/>
       <Feed/>
       </div>
+      {/* <Login/> */}
     </div>
   );
 }
