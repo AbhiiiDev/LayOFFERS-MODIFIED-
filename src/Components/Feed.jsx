@@ -14,7 +14,9 @@ function Feed() {
     const [posts,setposts]=useState([]);
 
     useEffect(()=>{
-        db.collection("posts").onSnapshot((snapshot)=>
+        db.collection("posts")
+        .orderBy("timestamp","desc")
+        .onSnapshot((snapshot)=>
             setposts(
                 snapshot.docs.map((doc)=>({
                     id: doc.id,
@@ -32,6 +34,7 @@ function Feed() {
             photoUrl:'',
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         });
+        setInput("");
     };
     
   return (
