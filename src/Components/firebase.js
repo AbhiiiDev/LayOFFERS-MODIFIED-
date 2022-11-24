@@ -1,20 +1,17 @@
 import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
+import'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCATTtMsupWxnGjiWEBfP_ApMVyNf-ye4M",
-  authDomain: "layoffers-e9c1d.firebaseapp.com",
-  projectId: "layoffers-e9c1d",
-  storageBucket: "layoffers-e9c1d.appspot.com",
-  messagingSenderId: "736688460459",
-  appId: "1:736688460459:web:cb36d94c3dd76a44fa1dee"
+  apiKey: "AIzaSyAs0mSmmnG6Mt0m16IDG5ErpqkstAKra-k",
+  authDomain: "layoffer-3b8c0.firebaseapp.com",
+  projectId: "layoffer-3b8c0",
+  storageBucket: "layoffer-3b8c0.appspot.com",
+  messagingSenderId: "713600145318",
+  appId: "1:713600145318:web:3c522549681ffc59112167"
 };
-
-  const firebaseApp=firebase.initializeApp(firebaseConfig);
-  const db=firebaseApp.firestore();
-  const auth=firebase.auth();
-
-  export { auth,db };
-  export default firebase;
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
+export{ db , auth };
