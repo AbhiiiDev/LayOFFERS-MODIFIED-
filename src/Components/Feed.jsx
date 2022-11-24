@@ -8,7 +8,7 @@ import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Posts from './Posts';
 function Feed() {
-    const [posts,setPosts]=useState([]);
+    const [posts,setposts] = useState([]);
   return (
     <div className="feed">
         <div className="feed_inputContainer">
