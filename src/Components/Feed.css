@@ -9,8 +9,9 @@
     padding-bottom: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
-
 }
+
+
 .feed_input{
     border: 1px solid lightgray;
     border-radius: 30px;
@@ -19,11 +20,12 @@
     color: gray;
     padding-left: 15px;
 }
-.feed_input form{
+
+.feed_input > form{
     display: flex;
      width: 100%;
 }
-.feed_input form input{
+.feed_input > form > input {
     border: none;
     flex: 1;
     margin-left: 10px;
@@ -31,11 +33,11 @@
     font-weight: 600;
 
 }
-.feed_input form button{
+.feed_input> form> button{
     display: none;
 }
 .feed_inputOptions{
     display: flex;
     justify-content: space-evenly;
     
-}
+} 
