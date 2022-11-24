@@ -7,23 +7,34 @@ import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Posts from './Posts';
-import {db} from '../firebase';
+import {db}  from './firebase.js' 
+import firebase from './firebase'
+
 function Feed() {
+    const [input,setInput]=useState('')
     const [posts,setPosts]=useState([]);
-    useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot)=>
-        setPosts(snapshot.docs.map(doc=> (
-            {
-                id:doc.id,
-                data:doc.data()
-            } ))
+
+    useEffect(()=>{
+  db.collection("posts").onSnapshot((snapshot) =>
+    setPosts(snapshot.docs.map((doc)=>(
+        {
+            id:doc.id,
+            data:doc.data(),
+        }))
         )
-    );
-    }, []);
-const sendPost=(e) => {
+  )
+    },[])
+const sendPost = (e) => {
     e.preventDefault();
-    db.collection('posts');
-}
+
+};
+db.collection("posts").add({
+    name:'Abhishek Verma',
+    description:'this is a trial post',
+    message: input,
+    photoUrl:"",
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+});
     
   return (
     <div className="feed">
@@ -31,8 +42,9 @@ const sendPost=(e) => {
             <div className="feed_input">
                 <CreateIcon/>
                 <form>
-                    <input type="text" />
-                    <button onClick={sendPost} type='submit'>Post</button>
+                    <input value ={input} onChange={e=>setInput(e.target.value)}
+                    type="text" />
+                  <button type='submit' onClick={sendPost}>Send</button>
                 </form>
             </div>
             <div className="feed_inputOptions">
@@ -42,16 +54,16 @@ const sendPost=(e) => {
                 <InputOptions Icon={CalendarViewDayIcon} title="Write Article" color="#7FC15E"/>
             </div>
         </div>
-{posts.map((post)=>(<post/>))}
-
-        <Posts
-        name="Divyanshu Varshney"
-        description="Testing it"
-        message="Wow it works"
-        />
-
+{posts.map(({ id ,data: { name,description,message,photoUrl } })=>(<Posts
+key={id}
+name ={name}
+description={description}
+message={message}
+photoUrl={photoUrl}
+/>
+))}
     </div>
-  )
+ )
 }
 
 export default Feed
