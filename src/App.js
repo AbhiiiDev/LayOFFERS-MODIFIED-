@@ -8,12 +8,12 @@ import Login from './Components/Login';
 function App() {
   return (
     <div className="App">
-      <Header/>
+      {/* <Header/> */}
       <div className="app_body">
-           <Sidebar/>
-      <Feed/>
+           {/* <Sidebar/> */}
+      {/* <Feed/> */}
       </div>
-      {/* <Login/> */}
+      <Login/>
     </div>
   );
 }
