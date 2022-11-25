@@ -26,6 +26,6 @@ export default function Posts({ name, description, message, photoUrl }) {
           <InputOptions  Icon={ShareIcon} title="Share" color="gray"/>
           <InputOptions  Icon={SendIcon} title="Send" color="gray"/>
         </div>
-    </div>
+    </div>  
   )
 }

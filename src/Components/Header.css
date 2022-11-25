@@ -1,18 +1,25 @@
 .header{
     display: flex;
+    position: sticky;
     position:sticky;
     top: 0;
     justify-content: space-evenly;
     border-bottom: 0.1px solid lightgray;
-    background-color: white;
+    background-color:#131212;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%;
     z-index: 999;
+
+    height: 90px;
 }
 .Header_left img{
     object-fit: contain;
-    height: 60px;
+    height: 90px;
+    margin-right: 89px;
+    margin-top: 20px;
+    width: 80px;
+
 }
 .Header_left{
     display: flex;
@@ -30,8 +37,10 @@
 }
 .Header_left img{
     object-fit: contain;
-    height: 40px;
+    height: 70px;
     margin-right: 10px;
+    margin-top: 2px;
+    border-radius: 10px;
 }
 
 .header_search input{

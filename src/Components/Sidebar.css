@@ -41,11 +41,13 @@ border-top-right-radius: 10px;
 }
 .sidebar_stats{
   border: 1px solid lightgray; 
+  background-color: white;
+
 }
 .sidebar_stat {
     margin-top: 10px;
     display: flex;
-
+    margin-left: 3px;
     justify-content: space-between;
 
 }

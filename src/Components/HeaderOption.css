@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     margin-right: 20px;
-    color: gray;
+    color: white;
     cursor: pointer;
 
 
@@ -14,7 +14,7 @@
     margin-top: 1px;
 }
 .headerOption:hover{
-    color: black;
+    color:rgb(20, 78, 240);
 
 }
 .headerOption_icon{
