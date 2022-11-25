@@ -9,6 +9,8 @@ import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Posts from './Posts';
 import { db } from './firebase';
 import firebase from 'firebase/compat/app';
+import FlipMove from 'react-flip-move';
+
 function Feed() {
     const [Input, setInput] = useState('');
     const [posts,setposts]=useState([]);
@@ -54,7 +56,8 @@ function Feed() {
                 <InputOptions Icon={CalendarViewDayIcon} title="Write Article" color="#7FC15E"/>
             </div>
         </div >
-        {posts.map(({id,data:{name,description,message,photoUrl}}) =>(
+        <FlipMove>
+{posts.map(({id,data:{name,description,message,photoUrl}}) =>(
             <Posts 
             key={id}
             name={name}
@@ -62,7 +65,8 @@ function Feed() {
             message={message}
             photoUrl={photoUrl}
             />
-        ))}
+            ))}
+            </FlipMove>
     </div>
   )
 }

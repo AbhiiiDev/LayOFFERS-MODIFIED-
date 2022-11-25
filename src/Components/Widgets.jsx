@@ -19,6 +19,15 @@ export default function Widgets() {
             <h2>News</h2>
             <InfoIcon/>
         </div>
+        <div className="news_item">
+            today: Meta deciding to fire 11,000 more employee soon.
+        </div>
+        <div className="news_item">
+            24/11/2022 : Alphabet fired 10,000 employee almost 6% of their crowd.
+        </div>
+        <div className="news_item">
+            today: Meta deciding to fire 11,000 more employee soon.
+        </div>
         {newsArticle("test")}
     </div>
     

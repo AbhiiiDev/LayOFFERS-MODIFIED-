@@ -3,6 +3,11 @@ import { useDispatch } from 'react-redux';
 import { auth } from './firebase';
 import "./Login.css";
 import { login } from '../features/userSlice';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import Feed from './Feed';
+import Widgets from './Widgets';
+
 
 
 export default function Login() {
@@ -13,8 +18,8 @@ export default function Login() {
   const [Add, setAdd] = useState("container");
   const dispach= useDispatch();
   const signin=()=>{
-    console.log("hello");
-    setAdd("container");
+ 
+
   }
   const signup=()=>{
     console.log("yes");
@@ -22,6 +27,12 @@ export default function Login() {
   }
   const logintoApp=(e)=>{
     e.preventDefault();
+    <>
+    <Header/>
+    <Sidebar/>
+    <Feed/>
+    <Widgets/>
+    </>
   }
   const register=()=>{
     if(!Name){
@@ -123,8 +134,7 @@ export default function Login() {
         <div className="content">
           <h3>New here ?</h3>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-            ex ratione. Aliquid!
+          Don't have an account ? No Problem , SignUp here and Register on LayOFFERS and fight with Recession.
           </p>
           <button className="btn transparent" id="sign-up-btn" onClick={signup}>
             Sign up
@@ -136,8 +146,7 @@ export default function Login() {
         <div className="content">
           <h3>One of us ?</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            laboriosam ad deleniti.
+Already have an account ? Just SingIn here and explore offers
           </p>
           <button className="btn transparent" id="sign-in-btn" onClick={signin}>
             Sign in

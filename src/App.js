@@ -14,8 +14,8 @@ function App() {
     
   
     <div className="App">
-      {user?<Login/>:(
-        <>
+      {/* {user?<Login/>:(
+        <> */}
         <Header/>
               <div className="app_body">
                 
@@ -23,8 +23,8 @@ function App() {
               <Feed/>
               <Widgets/>
          </div>
-         </>
-      )}
+         {/* </>
+      )} */}
       
 
     </div>

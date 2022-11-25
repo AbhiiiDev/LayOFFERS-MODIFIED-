@@ -18,3 +18,7 @@
     font-size: 16px;
     font-weight: 400;
 }
+.news_item{
+    border:1px solid lightgray;
+    margin-left: 2px;
+}
