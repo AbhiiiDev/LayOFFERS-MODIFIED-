@@ -4,8 +4,9 @@ import Feed from './Components/Feed';
 import Header from './Components/Header';
 import Sidebar from './Components/Sidebar';
 import Widgets from './Components/Widgets';
-import Login from './Components/Login'
+// import Login from './Components/Login'
 import { useSelector} from 'react-redux'
+import Loginnew from './Components/Loginnew';
 
 import { selectUser } from './features/userSlice';
 function App() {
@@ -14,8 +15,8 @@ function App() {
     
   
     <div className="App">
-      {/* {user?<Login/>:(
-        <> */}
+      {user?<Loginnew/>:(
+        <>
         <Header/>
               <div className="app_body">
                 
@@ -23,8 +24,8 @@ function App() {
               <Feed/>
               <Widgets/>
          </div>
-         {/* </>
-      )} */}
+         </>
+      )}
       
 
     </div>
