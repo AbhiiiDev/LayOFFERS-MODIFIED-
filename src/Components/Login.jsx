@@ -1,9 +1,17 @@
 import React,{useState} from 'react'
+import { useDispatch } from 'react-redux';
+import { auth } from './firebase';
 import "./Login.css";
+import { login } from '../features/userSlice';
 
 
 export default function Login() {
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
+  const [url, seturl] = useState("")
   const [Add, setAdd] = useState("container");
+  const dispach= useDispatch();
   const signin=()=>{
     console.log("hello");
     setAdd("container");
@@ -11,6 +19,30 @@ export default function Login() {
   const signup=()=>{
     console.log("yes");
     setAdd("container sign-up-mode");
+  }
+  const logintoApp=(e)=>{
+    e.preventDefault();
+  }
+  const register=()=>{
+    if(!Name){
+      alert("Please enter your name");
+      auth.createUserWithEmailAndPassword(Email,Password)
+      .then((userAuth)=>{userAuth.user.updateProfile({
+        displayName:Name,
+        photoURL:url,
+      })
+      .then(()=>{
+        dispach(login({
+          email:userAuth.user.email,
+          uid : userAuth.user.uid,
+          displayName :Name,
+          photoURL: url,
+        }))
+      })
+    })
+    .catch(error=>alert(error.message));
+    }
+
   }
 
   return (
@@ -21,13 +53,14 @@ export default function Login() {
           <h2 className="title">Sign in</h2>
           <div className="input-field">
             <i className="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input value={Email} onChange={e=>setEmail(e.target.value)} type="email" placeholder="Email" />
           </div>
           <div className="input-field">
             <i className="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" value={Password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" />
           </div>
-          <input type="submit" value="Login" className="btn solid" />
+          <button type='submit' onClick={logintoApp} className="btn solid">Sign in</button>
+          {/* <input type="submit" value="Login" className="btn solid" /> */}
           <p className="social-text">Or Sign in with social platforms</p>
           <div className="social-media">
             <a href="/" className="social-icon">
@@ -44,21 +77,28 @@ export default function Login() {
             </a>
           </div>
         </form>
+
+
         <form action="/" className="sign-up-form">
           <h2 className="title">Sign up</h2>
           <div className="input-field">
             <i className="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input type="text" value={Name} onChange={e=>setName(e.target.value)} placeholder="Username" />
+          </div>
+          <div className="input-field">
+            <i className="fas fa-user"></i>
+            <input value={url} onChange={e=>seturl(e.target.value)} type="text" placeholder="Profile Url" />
           </div>
           <div className="input-field">
             <i className="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" />
+            <input type="email" value={Email} onChange={e=>setEmail(e.target.value)} placeholder="Email" />
           </div>
           <div className="input-field">
             <i className="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" value={Password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" />
           </div>
-          <input type="submit" className="btn" value="Sign up" />
+          <button type='submit' onClick={register} className="btn solid">Sign up</button>
+          {/* <input type="submit" className="btn" value="Sign up" /> */}
           <p className="social-text">Or Sign up with social platforms</p>
           <div className="social-media">
             <a href="/" className="social-icon">
