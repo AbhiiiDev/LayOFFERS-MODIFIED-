@@ -2,34 +2,43 @@
     display: flex;
     justify-content: space-evenly;
     border-bottom: 0.1px solid lightgray;
-    background-color: white;
+    background-color: #131212;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%;
     z-index: 999;
+    font-size: 10px;
+    height:90px;
 }
 .Header_left img{
     object-fit: contain;
-    height: 60px;
+    height: 90px;
+      margin-right: 89px !important;
+      margin-top:20px;
+    width: 80px;
 }
 .Header_left{
     display: flex;
+     margin-left: -99px;
 }
 .header_search{
     padding: 10px;
     display: flex;
     align-items: center;
-    border-radius: 5px;
-    height: 22px;
-    color: gray;
+    border-radius: 50px;
+    height: 50px;
+    color: rgb(246, 241, 241);
     background-color: #eef3f8;
-
+    margin-top: 14px;
+    margin-bottom: 10px;
 
 }
 .Header_left img{
     object-fit: contain;
-    height: 40px;
-    margin-right: 10px;
+    height: 70px !important;
+    margin-right: 0px;
+    margin-top: 2px;
+    border-radius: 15px;
 }
 
 .header_search input{
@@ -40,4 +49,5 @@
 }
 .Header_right{
     display: flex;
+    font-size: 4px;
 }

@@ -4,11 +4,13 @@
 
 }
 .feed_inputContainer{
-    background-color: white;
+    /* background-color: #0392d412; */
+    background-color: aliceblue;
     padding: 10px;
     padding-bottom: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+    margin-top:30px
 }
 
 
@@ -39,5 +41,5 @@
 .feed_inputOptions{
     display: flex;
     justify-content: space-evenly;
-    
+    font-family: 'Roboto Slab', serif;
 } 

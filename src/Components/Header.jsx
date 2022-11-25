@@ -12,13 +12,13 @@ export default function Header() {
   return (
         <div className="header">
         <div className="Header_left">
-            <img src="./images/black.png" alt="" />
+            <img src="./images/blackk.png" alt=""  />
             <div className="header_search">
                 <SearchIcon/>
                 <input type=" " />
 
             </div>
-            </div>
+        </div>
 
         <div className="Header_right">
             <HeaderOption Icon={HomeIcon} title='Home'/>

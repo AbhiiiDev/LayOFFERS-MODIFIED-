@@ -1,24 +1,26 @@
 .headerOption{
     position:sticky;
-    top: 0;
+    top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 20px;
-    color: gray;
+    color: rgb(243, 237, 237);
     cursor: pointer;
-
+    font-size: 10px !important;
+    font-family: 'Space Mono', monospace;
 
 }
 .headerOption h3{
-    margin-top: 1px;
+    margin-top: 5px;
 }
 .headerOption:hover{
-    color: black;
+    color: rgb(228, 240, 9);
 
 }
 .headerOption_icon{
     object-fit: contain;
     height: 30px !important;
     width: 30px !important;
+    
 }
