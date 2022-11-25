@@ -13,12 +13,12 @@ export default function Posts({ name, description, message, photoUrl }) {
         <div className="post_header">
             <Avatar/>
             <div className="post_info">
-                <h2>Abhishek Verma</h2>
-                <p>yo RECESSION IS KILLING</p>
+                <h2>{name}</h2>
+                <p>{description}</p>
             </div>
         </div>
         <div className="post_body">
-            <p>THIS IS THE POST TEMPLATE</p>
+            <p>{message}</p>
         </div>
         <div className="post_buttons">
           <InputOptions  Icon={ThumbUpOffAltIcon} title="Like" color="gray"/>
