@@ -9,7 +9,10 @@ body {
     sans-serif;
   
   background-image:url("https://images.unsplash.com/photo-1586527155314-1d25428324ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
-  back
+  opacity: 1000;
+  backdrop-filter: blur(6px);
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
 }
 
 code {
